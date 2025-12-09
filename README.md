@@ -3,7 +3,6 @@
 ***SOBRE O PROJETO:***
 - O projeto NINHO foi trabalhado ao longo do ano como uma iniciativa minha de compreender como trabalhar com IA e implementa-la no codigo. A aplicação NINHO tem como objetivo ser uma ponte entre psicólogos e seus clientes, de forma que possa substituir o método tradicional de diário emocional.
 
-<h2>3A1</h2>
 
 <h1>*É de suma importância ler todo o tutorial antes de começar a inicialização do projeto*</h1>
 
