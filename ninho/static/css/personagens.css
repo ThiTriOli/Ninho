@@ -1,0 +1,445 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    margin-left: -1.7%;
+    align-items: center;
+    height: 11vh;
+    min-height: 70px;
+    background-color: #2E4238;
+    padding: 0 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    width: 7%;
+    min-width: 50px;
+    height: 100%;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#logo-img {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s ease;
+}
+
+.dark-mode #logo-img {
+    background-image: url('../images/logo_dark.png');
+}
+
+.menu-container {
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu-background {
+    position: absolute;
+    top: 0;
+    left: -36px;
+    right: 0;
+    width: 103%;
+    height: 82%;
+    background-color: #89B29E;
+    border-top-right-radius: 30px;
+    z-index: 0;
+    margin-top: auto;
+    bottom: 0;
+    transition: background-color 0.3s ease;
+}
+
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    background: none;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode h1 {
+    color: white;
+}
+.theme-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-btn svg {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+body.light-mode .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+body.light-mode .moon-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #333;
+}
+
+body.dark-mode .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+body.dark-mode .sun-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #fff;
+}
+.menu {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2vw;
+    padding-right: 3vw;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-size: clamp(14px, 1.8vw, 18px);
+    font-family: 'Fredoka', sans-serif;
+    white-space: nowrap;
+    padding: 5px 0;
+    position: relative;
+}
+
+.menu a:hover {
+    color: #333;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2E4238;
+    transition: width 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+main {
+    display: flex;
+}
+#lateral {
+    background-color: #2E4238;
+    height: 89vh;
+    width: 1.2%;
+    position: absolute;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+#main-corpo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/background-perso.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 89vh;
+    transition: background-image 0.3s ease;
+}
+.dark-mode #main-corpo {
+    background-image: url('../images/Fundo_Escuro.png');
+}
+.titulo-personagens {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    width: 70%;
+}
+.box {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    background-size: contain;
+}
+.box img {
+    margin-left: 0%;
+    background-size: contain;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+}
+
+.botao2 {
+    background-color: #b0c4a1;
+    height: 9vh;
+    width: 10%;
+    margin-bottom: 5%;
+    display: inline-block;
+    position: absolute;
+    border-color: #89B29E;
+    border-style: none;
+    border-radius: 15px;
+    align-self: flex-end;
+    margin-left: 80%;
+    transition: background-color 0.3s ease;
+}
+#sp2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #c6dae5;
+    margin-left: -20%;
+    margin-top: 7%;
+    height: 9vh;
+    border-radius: 15px;
+    width: 115%;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#sp2 a {
+    font-size: 130%;
+    text-decoration: none;
+    color: #47576E;
+    transition: color 0.3s ease;
+}
+#footer {
+    display: flex;
+    align-self: end;
+    z-index: 1;
+    position: absolute;
+    background-color: #89B29E;
+    width: 100%;
+    height: 9.3vh;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Modificações a partir daqui */
+
+.expanded-box {
+    position: absolute;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    width: 450px; /* Aumentado para dar mais espaço lateral */
+    padding: 15px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.expanded-box.visible {
+    opacity: 1;
+}
+
+.character-container {
+    display: flex;
+    gap: 20px;
+}
+
+.character-image {
+    flex: 1;
+}
+
+.character-image img {
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.character-info {
+    flex: 1;
+}
+
+.character-info h3 {
+    margin-top: 0;
+    color: #2E4238;
+    border-bottom: 2px solid #89B29E;
+    padding-bottom: 5px;
+}
+
+.character-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.character-info li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.character-info li:before {
+    content: "•";
+    color: #89B29E;
+    position: absolute;
+    left: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.button-container .btn {
+    padding: 8px 10px; /* Reduzido de 15px para 10px para encolher o botão */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px; /* Adicionado para diminuir o tamanho da fonte */
+}
+
+.btn-primary {
+    background-color: #89B29E;
+    color: white;
+}
+
+.btn-chat {
+    background-color: #2E4238;
+    color: white;
+}
+
+/* Estilo para tema escuro */
+.dark-mode .expanded-box {
+    background-color: #2E4238;
+    color: white;
+}
+
+.dark-mode .character-info h3 {
+    color: #89B29E;
+}
+
+.dark-mode .character-info li:before {
+    color: #b0c4a1;
+}
+
+/* ========== [INÍCIO DAS ALTERAÇÕES DE COR] ========== */
+
+:root {
+    /* TEMA CLARO */
+    --light-bg: #f5f5f5;
+    --light-text: #333;
+    --light-primary: #89B29E;
+    --light-box-bg: white;
+}
+
+/* TEMA ESCURO */
+.dark-mode {
+    --dark-bg: #3B503C;
+    --dark-text: #f0f0f0;
+    --dark-primary: #2E4238;
+    --dark-box-bg: #6E888F;
+}
+
+/* ELEMENTOS QUE MUDAM NO TEMA ESCURO */
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-mode .navbar {
+    background-color: var(--dark-primary);
+}
+
+.dark-mode #lateral {
+    background-color: var(--dark-primary);
+}
+
+.dark-mode .menu-background {
+    background-color: #597768;
+}
+
+.dark-mode .box {
+    background-color: var(--dark-box-bg);
+}
+
+.dark-mode .botao2 {
+    background-color: #3B503C;
+    color: #FFFFFF;
+}
+
+.dark-mode #sp2 {
+    background-color: #53808D;
+    color: #FFFFFF;
+}
+.dark-mode #sp2 a {
+    color: white !important;
+}
+
+.dark-mode #footer {
+    background-color: #597768;
+}
+
+.dark-mode .titulo-personagens {
+    color: white;
+}
+/* ========== [FIM DAS ALTERAÇÕES DE COR] ========== */

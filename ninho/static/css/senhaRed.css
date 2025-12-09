@@ -1,0 +1,180 @@
+body{
+    margin: 0;
+    background-image: url('../images/Group 30.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+h1
+{
+    font-family: 'Brittany Signature Script', sans-serif;
+    font-weight: 100;
+    color: white;
+    margin-bottom: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:230%;
+    margin-top: -2%;
+    font-weight: 100;
+    text-align: center;
+}
+
+#grupo-inputs
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputs
+{
+    background-color: black;
+    width: 220%;
+    display: flex;
+    
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+input{
+    padding-left: 10px;
+    font-family: "Itim", cursive;
+    color: white;
+    outline: none;
+    border-radius: 15px;
+    width: 120%;
+    height: 7vh;
+    background-color: #7C7979;
+}
+
+.input-container {
+    background-color: black; /* Cor da borda externa */
+    padding: 6px; /* Espaço entre a borda preta e o input */
+    display: flex;
+    border-radius: 15px;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1; 
+}
+
+#btns a
+{
+    font-family: "Itim", cursive;
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+#btns
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.espaçamento{
+    height: 1vh;
+}
+#btns button
+{
+    margin-top: 25px;
+    font-family: "Itim", cursive;
+    font-size: 25px;
+    width: 300%;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #89B29E;
+    border-color: #89B29E;
+    border-style: none;
+}
+
+h2
+{
+    font-family: "Itim", cursive;
+    font-size: 20px;
+    font-weight: 100;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background: none;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-btn svg {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+body.dark-mode{
+    background-image: url(dark-background.png);
+}
+body.light-mode .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+body.light-mode .moon-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #333;
+}
+
+body.dark-mode .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+body.dark-mode .sun-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #fff;
+}
+.dark-mode input{
+    background-color: #C8C8C8;
+    color: black;
+}
+.dark-mode input::placeholder{
+    color: black;
+}
+.dark-mode #Enviar{
+    background-color: #2E5D6A;
+}

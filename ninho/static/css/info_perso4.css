@@ -1,0 +1,436 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    margin-left: -1.7%;
+    align-items: center;
+    height: 11vh;
+    min-height: 70px; 
+    background-color: #2E4238;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    position: absolute;
+    margin-left: 0.5%;
+    width: 6%;
+    z-index: 99999;
+    min-width: 50px;
+    height: 100%;
+}
+
+#logo-img {
+    width: 100%;
+    height:100%;
+    background-image: url(../images/logo.png); /* Imagem normal */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s ease;
+}
+
+/* Logo alternativo (tema escuro) */
+.dark-mode #logo-img {
+    background-image: url(../images/logo_dark.png); 
+}
+.menu-container {
+    flex-grow: 1;
+    height: 110%;
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu-background {
+    position: absolute;
+    top: 0;
+    left: -36px; 
+    right: 0;
+    width: 103%;
+    height: 82%; 
+    background-color: #89B29E;
+    border-top-right-radius: 30px;
+    z-index: 0;
+    margin-top: auto;
+    bottom: 0;
+}
+/* === BOTÃO DE TEMA === */
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    background: none;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode h1{
+    color: white;
+}
+.theme-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Ícones SVG */
+.theme-btn svg {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Modo Claro (mostra lua) */
+body.light-mode .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+body.light-mode .moon-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #333;
+}
+
+/* Modo Escuro (mostra sol) */
+body.dark-mode .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+body.dark-mode .sun-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #fff;
+}
+.menu {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2vw; 
+    padding-right: 3vw;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-size: clamp(14px, 1.8vw, 18px);
+    font-family: 'Fredoka', sans-serif;
+    white-space: nowrap;
+    padding: 5px 0;
+    position: relative;
+}
+
+.menu a:hover {
+    color: #333;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2E4238;
+    transition: width 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+main{
+    display: flex;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#lateral{
+    background-color: #2E4238;
+    height: 89vh;
+    width: 1.2%;
+    position: absolute;
+    z-index: 10;
+}
+#main-corpo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/background-perso.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 89vh;
+}
+#main_lado01{
+    width: 30%;
+    height: 100%;
+    background-color: #C1E0DD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dark-mode #Main_lado01{
+    background-color: #485D5B;
+}
+#perso-img{
+    margin-top: 25%;
+    background-color: white;
+    border: solid;
+    border-radius: 125px;
+    height: 25vh;
+    width: 44%;
+}
+.dark-mode #main_lado01{
+    background-color: #485D5B;
+}
+.dark-mode #perso-img{
+    background-color: #7C7979;border: solid #333;
+}
+.dark-mode #main_lado01 h2{
+    color: #333;
+}
+#main_lado02{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#info-perso{
+    margin-bottom: 3.5%;
+  width: 80%;
+  height: 85%;
+  background-color: #D7EFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+}
+  
+  .ficha-personagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #000;
+  }
+  
+.botao {
+    background-color: #b0c4a1;
+    height: 9vh;
+    left: -50px;
+    width: 58%;
+    display: inline-block;
+    position: relative;
+    border-color: #89B29E;
+    border-style: none;
+}
+
+.botao2 {
+    background-color: #b0c4a1;
+    margin-top: 13px;
+    height: 9vh;
+    width: 60%;
+    left: 60px;
+    display: inline-block;
+    position: relative;
+    border-color: #89B29E;
+    border-style: none;
+    align-self: flex-end;
+    margin-right: 90px;
+}
+
+.botao button{
+    background-color: #b0c4a1;
+    height: 4vh;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+}
+
+.botao2 button{
+    background-color: #b0c4a1;
+    height: 4vh;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+}
+  .ficha-personagem .campo {
+    padding: 10px 0;
+    border-bottom: 1px solid #aad4e2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .dark-mode #info-perso{
+    background-color: #546367;
+}
+.dark-mode .ficha-personagem .campo {
+    border:  1px solid #333;
+}
+.dark-mode #main-corpo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/Fundo_Escuro\ \(1\).png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 89vh;
+}
+
+
+.botao2 {
+    background-color: #b0c4a1;
+    height: 9vh;
+    width: 10%;
+    margin-bottom: 5%;
+    display: inline-block;
+    position: absolute;
+    border-color: #89B29E;
+    border-style: none;
+    border-radius: 15px;
+    align-self: flex-end;
+    margin-left: 80%;
+}
+.botao2 button{
+    background-color: #b0c4a1;
+    height: 4vh;
+    width: 30%;
+    display: inline-block;
+    border-radius: 15px;
+    position: relative;
+}
+#sp2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #c6dae5;
+    margin-left: -20%;
+    margin-top: 7%;
+    height: 9vh;
+    border-radius: 15px;
+    width: 115%;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    z-index: 1;
+}
+#sp2 a{
+    font-size: 130%;
+    text-decoration: none;
+    color: #47576E;
+}
+#footer {
+    display: flex;
+    align-self: end;
+    z-index: 1;
+    position: absolute;
+    background-color: #89B29E;
+    width: 100%;
+    height: 9.3vh;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Estilo para tema escuro */
+.dark-mode .expanded-box {
+    background-color: #2E4238;
+    color: white;
+}
+
+.dark-mode .character-info h3 {
+    color: #89B29E;
+}
+
+.dark-mode .character-info li:before {
+    color: #b0c4a1;
+}
+/* ========== [INÍCIO DAS ALTERAÇÕES DE COR] ========== */
+
+:root {
+    /* TEMA CLARO */
+    --light-bg: #f5f5f5;            /* Cor de fundo geral */
+    --light-text: #333;             /* Cor do texto principal */
+    --light-primary: #89B29E;       /* Cor primária (menu/navbar) */
+    --light-box-bg: lightgray;      /* Fundo dos boxes dos personagens */
+    
+    /* TEMA ESCURO */
+    --dark-bg: #597768;             /* Cor de fundo geral */
+    --dark-text: #f0f0f0;           /* Cor do texto principal */
+    --dark-primary: #2E4238;        /* Cor primária (menu/navbar) - MODIFICADO */
+    --dark-box-bg: #6E888F;         /* Fundo dos boxes dos personagens */
+}
+
+/* ELEMENTOS QUE MUDAM NO TEMA ESCURO */
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-mode .navbar {
+    background-color: var(--dark-primary);  /* Navbar - MODIFICADO */
+}
+
+.dark-mode #lateral {
+    background-color: var(--dark-primary);  /* Barra lateral - MODIFICADO */
+}
+
+.dark-mode .menu-background {
+    background-color: #597768;              /* Fundo do menu - NOVO */
+}
+
+.dark-mode .box {
+    background-color: var(--dark-box-bg);   /* Boxes dos personagens */
+}
+
+.dark-mode .botao2 {
+    background-color: #3B503C;   
+    color: #FFFFFF;           /* Botão Voltar - MODIFICADO */
+}
+
+.dark-mode #sp2 {
+    background-color: #53808D;    
+    color: #FFFFFF;                  /* Fundo do span do botão - MODIFICADO */
+}
+.dark-mode #sp2 a {
+    color: white !important;
+}
+
+.dark-mode #footer {
+    background-color: #597768;              /* Rodapé - MODIFICADO */
+}
+body, 
+.navbar,
+#lateral,
+.menu-background,
+.box,
+.botao2,
+#sp2,
+#footer,
+.titulo-personagens {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;}
+/* ========== [FIM DAS ALTERAÇÕES DE COR] ========== */

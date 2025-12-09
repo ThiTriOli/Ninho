@@ -1,0 +1,577 @@
+body {
+    background-image: url('../images/Group 30.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    overflow-y: hidden;
+    padding: 0;
+}
+
+.messages {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    color: red;
+    margin-bottom: 10px;
+}
+
+
+/* Variáveis de cores - você pode alterar essas cores facilmente */
+:root {
+    /* Light mode colors */
+    --light-bg-color: #f5f5f5;
+    --light-text-color: #333;
+    --light-primary-color: #2E4238;
+    --light-secondary-color: #89B29E;
+    --light-input-bg: #7C7979;
+    --light-input-border: black;
+    --light-button-bg: #b0c4a1;
+    --light-span-bg: #c6dae5;
+    
+    /* Dark mode colors */
+    --dark-bg-color: #121212;
+    --dark-text-color: #f5f5f5;
+    --dark-primary-color: #1E3127;
+    --dark-secondary-color: #5A8D72;
+    --dark-input-bg: #4A4A4A;
+    --dark-input-border: #333;
+    --dark-button-bg: #8A9D7E;
+    --dark-span-bg: #9AB4C5;
+}
+/* Light mode styles */
+
+
+/* Dark mode styles */
+body.dark-mode {
+    background-image: url('../images/background_dark_redsenha.png');
+}
+
+
+
+body.dark-mode #inputs {
+    background-color: var(--dark-input-border);
+}
+
+body.dark-mode input {
+    background-color: #C8C8C8;
+    color: black;
+}
+.dark-mode input::placeholder{
+    background-color: #C8C8C8;
+    color: black;   
+}
+body.dark-mode #btns button {
+    background-color: #3C6D7B;
+}
+.dark-mode #cadastre h2{
+    background-color: #C8C8C8;
+    color: black;
+}
+.dark-mode #cadastreProfissional h2{
+    color: white;
+}
+.dark-mode #cadastre h2 a{
+    color: #518B18;
+}
+.dark-mode #cadastreProfissional h2 a{
+    color: #589167;
+}
+body.dark-mode .botao, 
+body.dark-mode .botao2 {
+    background-color:#3B503C;
+    color: white;
+}
+
+body.dark-mode #sp1, 
+body.dark-mode #sp2 {
+    background-color: #3C6D7B;
+    color: white;
+}
+main{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    font-size:230%;
+    margin-top: -2%;
+    font-weight: 100;
+    text-align: center;
+}
+
+h1
+{
+    font-family: 'Brittany Signature Script', sans-serif;
+    font-weight: 100;
+    color: white;
+    margin-bottom: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#grupo-inputs
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputs
+{
+    background-color: black;
+    width: 220%;
+    display: flex;
+    
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+#espaçamento{
+    margin-bottom: 7%;
+}
+
+input{
+    padding-left: 10px;
+    font-family: "Itim", cursive;
+    color: white;
+    outline: none;
+    border-radius: 15px;
+    width: 120%;
+    height: 7vh;
+    background-color: #7C7979;
+}
+
+.input-container {
+    background-color: black; /* Cor da borda externa */
+    padding: 6px; /* Espaço entre a borda preta e o input */
+    display: flex;
+    border-radius: 15px;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1; 
+}
+
+#btns a
+{
+    font-family: "Itim", cursive;
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+#btns
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#btns button
+{
+    margin-top: 25px;
+    font-family: "Itim", cursive;
+    font-size: 25px;
+    width: 240%;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #89B29E;
+    border-color: #89B29E;
+    border-style: none;
+}
+
+.botao {
+    background-color: #b0c4a1;
+    height: 9vh;
+    left: -50px;
+    width: 58%;
+    display: inline-block;
+    position: relative;
+    border-color: #89B29E;
+    border-style: none;
+}
+
+.botao2 {
+    background-color: #b0c4a1;
+    margin-top: 13px;
+    height: 9vh;
+    width: 60%;
+    left: 60px;
+    display: inline-block;
+    position: relative;
+    border-color: #89B29E;
+    border-style: none;
+    align-self: flex-end;
+    margin-right: 90px;
+}
+
+.botao button{
+    background-color: #b0c4a1;
+    height: 4vh;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+}
+
+.botao2 button{
+    background-color: #b0c4a1;
+    height: 4vh;
+    width: 30%;
+    display: inline-block;
+    position: relative;
+}
+
+span a
+{
+    text-decoration: none;
+    font-family: "Itim", cursive;
+    font-size: x-large;
+    font-weight: 100;
+    color: #47576E;
+}
+
+#sp1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #c6dae5;
+    margin-left: 10%;
+    margin-top: 7%;
+    height: 9vh;
+    width: 115%;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    z-index: 1;
+}
+
+#sp2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #c6dae5;
+    align-self: flex-start;
+    justify-self: right;
+    margin-top: 9%;
+    left: -22px;
+    height: 9vh;
+    width: 110%;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    z-index: 1;
+}
+
+#cadastre
+{
+    width: 400px;
+    font-size: small;
+    font-family: "Itim", cursive;
+    background-color: #000;
+    color: white;
+    padding: 9px;
+    border-radius: 19px;
+}
+
+#cadastre h2
+{   
+    font-weight: 100;
+    margin: 0;
+    background-color: #7C7979;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+#cadastre a
+{
+    color: #075831;
+    text-decoration: none;
+}
+/* Adicione estas regras ao seu CSS existente */
+
+#cadastreProfissional
+{
+    width: 500px;
+    font-size: small;
+    font-family: "Itim", cursive;
+}
+
+#cadastreProfissional h2
+{   
+    font-weight: 100;
+    margin: 0;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+#cadastreProfissional a
+{
+    color: #589167;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    width: 100%;
+}
+
+#principal-direita {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+
+#lateral01 {
+    width: 98%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#lateral02 {
+    width: 2%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Ícones SVG */
+.theme-btn svg {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Modo Claro (mostra lua) */
+body.light-mode .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+body.light-mode .moon-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #000;
+}
+
+/* Modo Escuro (mostra sol) */
+body.dark-mode .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+body.dark-mode .sun-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #fff;
+}
+
+/* ===== ESTILOS DO MODAL DE TERMOS ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--light-bg-color);
+    border-radius: 12px;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+body.dark-mode .modal-content {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--light-input-border);
+}
+
+body.dark-mode .modal-header {
+    border-bottom: 1px solid var(--dark-input-border);
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--light-primary-color);
+    font-size: 1.5rem;
+}
+
+body.dark-mode .modal-header h2 {
+    color: var(--dark-secondary-color);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--light-text-color);
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #d32f2f;
+}
+
+body.dark-mode .modal-close {
+    color: var(--dark-text-color);
+}
+
+.modal-body {
+    padding: 20px;
+    color: var(--light-text-color);
+    line-height: 1.6;
+}
+
+body.dark-mode .modal-body {
+    color: var(--dark-text-color);
+}
+
+.modal-body h4 {
+    color: var(--light-primary-color);
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+body.dark-mode .modal-body h4 {
+    color: var(--dark-secondary-color);
+}
+
+.modal-body p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    border-top: 1px solid var(--light-input-border);
+}
+
+body.dark-mode .modal-footer {
+    border-top: 1px solid var(--dark-input-border);
+}
+
+.btn-aceitar,
+.btn-rejeitar {
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-aceitar {
+    background-color: var(--light-secondary-color);
+    color: white;
+}
+
+.btn-aceitar:hover {
+    background-color: #6d9d7f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(137, 178, 158, 0.4);
+}
+
+.btn-rejeitar {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn-rejeitar:hover {
+    background-color: #aaa;
+    transform: translateY(-2px);
+}
+
+body.dark-mode .btn-rejeitar {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .btn-rejeitar:hover {
+    background-color: #666;
+}

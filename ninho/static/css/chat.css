@@ -1,0 +1,482 @@
+body {
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 99vh;
+}
+
+/* Remover outline/box-shadow padrão de todos os botões */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.btn {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.navbar {
+    display: flex;
+    margin-left: -1.7%;
+    align-items: center;
+    height: 11vh;
+    min-height: 70px;
+    background-color: #2E4238;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    width: 7%;
+    min-width: 50px;
+    height: 100%;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#logo-img {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.3s ease;
+}
+
+.dark-mode #logo-img {
+    background-image: url(../images/logo_dark.png); /* Assumi que faltava a extensão .png */
+}
+
+.menu-container {
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
+    margin-left: 20px;
+}
+
+.menu-background {
+    position: absolute;
+    top: 0;
+    left: -36px;
+    right: 0;
+    width: 103%;
+    height: 82%;
+    background-color: #89B29E;
+    border-top-right-radius: 30px;
+    z-index: 0;
+    margin-top: auto;
+    bottom: 0;
+}
+
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    background: none;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.theme-btn svg {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    outline: none;
+}
+
+body.light-mode .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+    outline: none;
+}
+body.light-mode .moon-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #333;
+    outline: none;
+}
+body.dark-mode .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+    outline: none;
+}
+body.dark-mode .sun-icon {
+    opacity: 1;
+    transform: rotate(0);
+    color: #fff;
+    outline: none;
+}
+
+.menu {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2vw;
+    padding-right: 3vw;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-size: clamp(14px, 1.8vw, 18px);
+    font-family: 'Fredoka', sans-serif;
+    white-space: nowrap;
+    padding: 5px 0;
+    position: relative;
+}
+.menu a:hover {
+    color: #333;
+}
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2E4238;
+    transition: width 0.3s;
+}
+.menu a:hover::after {
+    width: 100%;
+}
+
+main {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+}
+
+#lateral {
+    background-color: #2E4238;
+    height: 100%;
+    width: 1.2%;
+    position: relative; /* Ajuste para melhor layout com flex */
+    z-index: 10;
+}
+
+#main-corpo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../images/background-perso.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.dark-mode #main-corpo {
+    background-image: url(../images/Fundo_Escuro.png);
+}
+
+#chat-form{
+    width: 100%;
+    display: flex;
+    align-self: flex-start;
+}
+
+/* Estilos do chat */
+.chat-container {
+    margin-left: 10px;
+    overflow-y: scroll;
+    width: 100.5%;
+    height: 67vh; /* área do chat fixa para permitir scroll somente nas mensagens */
+    max-height: 70vh; /* Para garantir o limite */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 70%; /* Ajustado para melhor usabilidade */
+    padding: 10px 15px;
+    border-radius: 18px;
+    font-size: 0.95em;
+    line-height: 1.4;
+    word-wrap: break-word; /* Garante que palavras longas quebrem */
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #47576E;
+    border-bottom-right-radius: 5px;
+    color: white;
+}
+
+.character-message {
+    align-self: flex-start;
+    background-color: #546a5f;
+    border-bottom-left-radius: 5px;
+    color: white;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    width: 97%;
+    position: absolute;
+    margin-top: 68vh;
+    border-radius: 50px;
+    outline: none;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-color: #2E4238;
+    border-style: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.chat-input button {
+    display: flex;
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    background-image: url(../images/enviar.png);
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent; /* Alterado para esconder o texto padrão */
+    width: 45px; /* Tamanho fixo para o ícone */
+    height: 45px;
+    border: none;
+    border-radius: 50%; /* Botão redondo */
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #6E9885;
+    background-image: url(../images/send.png); /* Assumindo que este é o ícone de hover/clique */
+}
+
+.botao2 {
+    background-color: #b0c4a1;
+    height: 9vh;
+    width: 10%;
+    margin-bottom: 5%;
+    display: inline-block;
+    position: absolute;
+    border-color: #89B29E;
+    border-style: none;
+    border-radius: 15px;
+    align-self: flex-end;
+    margin-left: 80%;
+}
+
+#sp2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #c6dae5;
+    margin-left: -20%;
+    margin-top: 7%;
+    height: 9vh;
+    border-radius: 15px;
+    width: 115%;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    z-index: 1;
+}
+
+#sp2 a {
+    font-size: 130%;
+    text-decoration: none;
+    color: #47576E;
+}
+
+#footer {
+    display: flex;
+    align-self: end;
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    background-color: #89B29E;
+    width: 100%;
+    height: 9.3vh;
+    transition: background-color 0.3s ease;
+}
+
+/* Indicador de Carregamento (Novo Estilo) */
+.message-loading {
+    align-self: flex-start;
+    background-color: #47576E; /* Usando cor do usuário/IA para manter o tema */
+    color: white;
+    opacity: 0.7;
+    font-style: italic;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+
+/* === DARK MODE VARIANTES === */
+:root {
+    --light-bg: #f5f5f5;
+    --light-text: #333;
+    --light-primary: #89B29E;
+    --light-box-bg: lightgray;
+
+    --dark-bg: #597768;
+    --dark-text: #f0f0f0;
+    --dark-primary: #2E4238;
+    --dark-box-bg: #6E888F;
+}
+
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-mode .navbar {
+    background-color: var(--dark-primary);
+}
+
+.dark-mode #lateral {
+    background-color: var(--dark-primary);
+}
+
+.dark-mode .menu-background {
+    background-color: #597768;
+}
+
+.dark-mode .botao2 {
+    background-color: #3B503C;
+    color: #FFFFFF;
+}
+
+.dark-mode #sp2 {
+    background-color: #53808D;
+    color: #FFFFFF;
+}
+.dark-mode #sp2 a {
+    color: white !important;
+}
+
+.dark-mode #footer {
+    background-color: #597768;
+}
+
+.dark-mode .chat-container {
+    background-color: none;
+    /* Firefox */
+    scrollbar-color: #546a5f #333;
+    scrollbar-width: thin;
+}
+
+/* WebKit browsers */
+.dark-mode .chat-container::-webkit-scrollbar{
+    width: 10px;
+}
+.dark-mode .chat-container::-webkit-scrollbar-track{
+    background-color: #333;
+}
+.dark-mode .chat-container::-webkit-scrollbar-thumb{
+    background-color: #546a5f;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.dark-mode .chat-header {
+    background-color: #3B503C;
+    color: #f0f0f0;
+}
+
+.dark-mode .user-message {
+    background-color: #4a6b4a;
+    color: #f0f0f0;
+}
+
+.dark-mode .character-message {
+    background-color: #6E888F;
+    color: #f0f0f0;
+}
+
+.dark-mode .chat-input {
+    background-color: #3B503C;
+    border-top: 1px solid #2E4238;
+}
+
+.dark-mode .chat-input input {
+    background-color: #3B503C;
+    color: #f0f0f0;
+    border-color: #2E4238;
+}
+
+.dark-mode .chat-input button {
+    background-color: #3B503C;
+    background-image: url(../images/enviar_dark.png); /* Ícone escuro */
+    color: #f0f0f0;
+}
+
+.dark-mode .chat-input button:hover {
+    background-color: #6E9885;
+    background-image: url(../images/send_dark.png);
+}
+
+body,
+.navbar,
+#lateral,
+.menu-background,
+.botao2,
+#sp2,
+#footer {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

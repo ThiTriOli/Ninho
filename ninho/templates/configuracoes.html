@@ -1,0 +1,321 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo_mod.png' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/configuracoes.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+                <div class="logo">
+                <a href="{% url 'ninho:inicio' %}">
+                    <div id="logo-img"></div>
+                </a>
+            </div>
+            
+            <div class="menu-container">
+                <div class="menu-background"></div>
+                <div class="menu">
+                    <a href="{% url 'ninho:sobrenos' %}">sobre nós</a>
+                    <a href="{% url 'ninho:contato' %}">Contate-nos</a>
+                    <a href="{% url 'ninho:personagens' %}">personagens</a>
+                    <a href="{% url 'ninho:perfil' %}" class="profile-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                            </svg>
+                        </a>
+                        <button id="theme-toggle" class="theme-btn" aria-label="Alternar tema">
+                            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path d="M8 22H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5 19H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 16H22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21.0672 11.8568L20.4253 11.469L21.0672 11.8568ZM12.1432 2.93276L11.7553 2.29085V2.29085L12.1432 2.93276ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75V1.25C6.06294 1.25 1.25 6.06294 1.25 12H2.75ZM15.5 14.25C12.3244 14.25 9.75 11.6756 9.75 8.5H8.25C8.25 12.5041 11.4959 15.75 15.5 15.75V14.25ZM20.4253 11.469C19.4172 13.1373 17.5882 14.25 15.5 14.25V15.75C18.1349 15.75 20.4407 14.3439 21.7092 12.2447L20.4253 11.469ZM9.75 8.5C9.75 6.41182 10.8627 4.5828 12.531 3.57467L11.7553 2.29085C9.65609 3.5593 8.25 5.86509 8.25 8.5H9.75ZM21.25 12C21.25 13.3169 20.9752 14.5677 20.4806 15.6997L21.8552 16.3003C22.431 14.9824 22.75 13.5275 22.75 12H21.25ZM3.51935 15.6997C3.02475 14.5677 2.75 13.3169 2.75 12H1.25C1.25 13.5275 1.56904 14.9824 2.14482 16.3003L3.51935 15.6997ZM12 2.75C11.9115 2.75 11.8077 2.71008 11.7324 2.63168C11.6686 2.56527 11.6538 2.50244 11.6503 2.47703C11.6461 2.44587 11.6482 2.35557 11.7553 2.29085L12.531 3.57467C13.0342 3.27065 13.196 2.71398 13.1368 2.27627C13.0754 1.82126 12.7166 1.25 12 1.25V2.75ZM21.7092 12.2447C21.6444 12.3518 21.5541 12.3539 21.523 12.3497C21.4976 12.3462 21.4347 12.3314 21.3683 12.2676C21.2899 12.1923 21.25 12.0885 21.25 12H22.75C22.75 11.2834 22.1787 10.9246 21.7237 10.8632C21.286 10.804 20.7293 10.9658 20.4253 11.469L21.7092 12.2447Z" fill="currentColor"/>
+                                <path d="M19.9001 2.30719C19.7392 1.8976 19.1616 1.8976 19.0007 2.30719L18.5703 3.40247C18.5212 3.52752 18.4226 3.62651 18.298 3.67583L17.2067 4.1078C16.7986 4.26934 16.7986 4.849 17.2067 5.01054L18.298 5.44252C18.4226 5.49184 18.5212 5.59082 18.5703 5.71587L19.0007 6.81115C19.1616 7.22074 19.7392 7.22074 19.9001 6.81116L20.3305 5.71587C20.3796 5.59082 20.4782 5.49184 20.6028 5.44252L21.6941 5.01054C22.1022 4.849 22.1022 4.26934 21.6941 4.1078L20.6028 3.67583C20.4782 3.62651 20.3796 3.52752 20.3305 3.40247L19.9001 2.30719Z" stroke="currentColor"/>
+                                <path d="M16.0328 8.12967C15.8718 7.72009 15.2943 7.72009 15.1333 8.12967L14.9764 8.52902C14.9273 8.65407 14.8287 8.75305 14.7041 8.80237L14.3062 8.95987C13.8981 9.12141 13.8981 9.70107 14.3062 9.86261L14.7041 10.0201C14.8287 10.0694 14.9273 10.1684 14.9764 10.2935L15.1333 10.6928C15.2943 11.1024 15.8718 11.1024 16.0328 10.6928L16.1897 10.2935C16.2388 10.1684 16.3374 10.0694 16.462 10.0201L16.8599 9.86261C17.268 9.70107 17.268 9.12141 16.8599 8.95987L16.462 8.80237C16.3374 8.75305 16.2388 8.65407 16.1897 8.52902L16.0328 8.12967Z" stroke="currentColor"/>
+                            </svg>
+                            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 19C4.25 18.5858 4.58579 18.25 5 18.25H19C19.4142 18.25 19.75 18.5858 19.75 19C19.75 19.4142 19.4142 19.75 19 19.75H5C4.58579 19.75 4.25 19.4142 4.25 19ZM7.25 22C7.25 21.5858 7.58579 21.25 8 21.25H16C16.4142 21.25 16.75 21.5858 16.75 22C16.75 22.4142 16.4142 22.75 16 22.75H8C7.58579 22.75 7.25 22.4142 7.25 22Z" fill="currentColor"/>
+                                <path d="M6.08267 15.25C5.5521 14.2858 5.25 13.1778 5.25 12C5.25 8.27208 8.27208 5.25 12 5.25C15.7279 5.25 18.75 8.27208 18.75 12C18.75 13.1778 18.4479 14.2858 17.9173 15.25H22C22.4142 15.25 22.75 15.5858 22.75 16C22.75 16.4142 22.4142 16.75 22 16.75H2C1.58579 16.75 1.25 16.4142 1.25 16C1.25 15.5858 1.58579 15.25 2 15.25H6.08267Z" fill="currentColor"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V3C12.75 3.41421 12.4142 3.75 12 3.75C11.5858 3.75 11.25 3.41421 11.25 3V2C11.25 1.58579 11.5858 1.25 12 1.25ZM4.39861 4.39861C4.6915 4.10572 5.16638 4.10572 5.45927 4.39861L5.85211 4.79145C6.145 5.08434 6.145 5.55921 5.85211 5.85211C5.55921 6.145 5.08434 6.145 4.79145 5.85211L4.39861 5.45927C4.10572 5.16638 4.10572 4.6915 4.39861 4.39861ZM19.6011 4.39887C19.894 4.69176 19.894 5.16664 19.6011 5.45953L19.2083 5.85237C18.9154 6.14526 18.4405 6.14526 18.1476 5.85237C17.8547 5.55947 17.8547 5.0846 18.1476 4.79171L18.5405 4.39887C18.8334 4.10598 19.3082 4.10598 19.6011 4.39887ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H3C3.41421 11.25 3.75 11.5858 3.75 12C3.75 12.4142 3.41421 12.75 3 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM20.25 12C20.25 11.5858 20.5858 11.25 21 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H21C20.5858 12.75 20.25 12.4142 20.25 12Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-page">
+        <aside class="side-nav">
+            <div id="lateral-logo"></div>
+            <button class="side-btn active" id="user-info-btn" data-content-id="user-info-section">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                            </svg>Perfil
+            </button>
+            <button class="side-btn" id="notifications-btn" data-content-id="notifications-section">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6V9c0-3.1-2.9-5.9-6-6-3.1 0-6 2.8-6 5.9v7l-2 2v1h16v-1l-2-2z"/></svg>
+                Notificações
+            </button>
+            <button class="side-btn" id="privacy-security-btn" data-content-id="privacy-security-section">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                Privacidade e Segurança
+            </button>
+        </aside>
+
+        <section class="main-content">
+            <div id="user-info-section" class="content-section active">
+                <div class="user-profile">
+                    <div class="profile-header">
+                        <img src="{% static 'images/perfil.png' %}" alt="Foto de perfil" class="profile-image">
+                        <div class="profile-details">
+                            <h2 id="user-name">Nome do Usuário</h2>
+                        </div>
+                    </div>
+                    <div class="profile-body">
+                        <h3>Informações da Conta</h3>
+                        <div class="account-details">
+                            <p><strong>Nickname:</strong> <span id="display-nickname">Nome do Usuário</span></p>
+                            <p><strong>Email:</strong>{{ request.session.usuario_email }}</p>
+                        </div>
+                        <button class="main-btn" id="edit-profile-btn">Editar Perfil</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="notifications-section" class="content-section">
+                <h2>Notificações</h2>
+                <p>Aqui você pode gerenciar suas configurações de notificação.</p>
+            </div>
+
+            <div id="privacy-security-section" class="content-section">
+                <h2>Privacidade e Segurança</h2>
+                <div class="options-container">
+                    
+                    
+                    <hr>
+
+                    <div class="terms-option">
+                        <h3>Termos e Políticas</h3>
+                        <p>Gerencie seus consentimentos para os termos de uso e política de privacidade.</p>
+                        <button class="main-btn" id="open-terms-modal-btn" data-toggle="modal" data-target="#termsModal">
+                            Ver Termos de Uso e Política de Privacidade
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="chat-side-bar">
+            <h3>Chats Recentes</h3>
+            <div class="chat-list" id="chat-list-section">
+                <a href="#" class="chat-item">
+                    <div class="chat-preview">
+                        <div class="chat-image"></div>
+                        <div class="chat-info">
+                            <h4>Personagem 1</h4>
+                            <p>Última mensagem...</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="chat-item">
+                    <div class="chat-preview">
+                        <div class="chat-image"></div>
+                        <div class="chat-info">
+                            <h4>Personagem 2</h4>
+                            <p>Última mensagem...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </aside>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Editar Perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="new-nickname">Nickname</label>
+                            <input type="text" class="form-control" id="new-nickname" placeholder="Novo nickname">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-username">Nome de Usuário</label>
+                            <input type="text" class="form-control" id="new-username" placeholder="Novo nome de usuário">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-phone">Telefone</label>
+                            <input type="tel" class="form-control" id="new-phone" placeholder="Novo telefone">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="save-profile-btn">Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Termos de Uso e Política de Privacidade</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="terms-container">
+                        <div class="terms-container">
+                            <p><strong>Última atualização: 26/11</strong></p>
+                            <p>Bem-vindo(a) ao <strong>Ninho</strong>! Ao acessar ou usar nosso serviço, você concorda em cumprir e se sujeitar aos seguintes Termos de Uso e Política de Privacidade. Por favor, leia-os atentamente. Se você não concordar com qualquer parte dos termos, não use o nosso serviço.</p>
+                            <br>
+                            <h6><strong>1.</strong> Aceitação dos Termos</h6>
+                            <p>Ao acessar ou utilizar o <strong>Ninho</strong>, você manifesta sua concordância integral com este Termo de Uso, com a Política de Privacidade e com a Lei Geral de Proteção de Dados Pessoais (LGPD – Lei nº 13.709/2018). Se você estiver usando o serviço em nome de uma empresa, declara que tem autoridade para vincular essa empresa a estes Termos.</p>
+                            <br>
+                            <h6><strong>2.</strong> Uso do Serviço (O Projeto Ninho)</h6>
+                            <p>O <strong>Ninho</strong> é um ambiente virtual que simula um espaço terapêutico, conectando o cliente com uma IA treinada para ouvir, acolher e aconselhar. Nosso intuito é fazer com que pessoas que não possuem contato com a terapia tenham a oportunidade de conhecer essa experiência de forma segura e sigilosa, oferecendo uma experiência de entrada para esse mundo que salva vidas, especialmente para aqueles que não se sentem à vontade com sessões presenciais. Você concorda em usar o serviço apenas para fins lícitos e de maneira que não infrinja os direitos de terceiros ou restrinja o uso do serviço por outras pessoas. O uso para fins comerciais, sem permissão expressa, é estritamente proibido.</p>
+                            <br>
+                            <h6><strong>3.</strong> Política de Conteúdo e Vedações de Uso</h6>
+                            <p>Você é o único responsável pelo conteúdo que cria, envia ou armazena no serviço. Você se compromete a não utilizar o <strong>Ninho</strong> para qualquer finalidade ilícita ou que viole este Termo de Uso. Isso inclui: Carregar conteúdo ilegal, difamatório, obsceno ou prejudicial; Acessar, alterar ou danificar contas de outros usuários; Violar direitos de propriedade intelectual ou outros direitos de terceiros; ou Utilizar a plataforma para tentar realizar engenharia reversa, extração massiva de dados (scraping) ou manipular a IA (jailbreaking) com o objetivo de obter respostas não intencionais, ilegais ou prejudiciais. Reservamo-nos o direito de remover qualquer conteúdo que, a nosso critério exclusivo, considerarmos inadequado ou em violação destes termos, sem aviso prévio.</p>
+                            <br>
+                            <h6><strong>4.</strong> Coleta, Uso e Proteção de Dados Pessoais</h6>
+                            <p>Sua privacidade é importante para nós. Nossa Política de Privacidade detalha como coletamos, usamos e protegemos suas informações pessoais. Ao usar o serviço, você consente com a coleta e uso de suas informações conforme descrito na Política de Privacidade, e declara estar ciente da coleta dos seguintes dados:</p>
+                            <ul>
+                                <li>**Email:** Para recuperação e verificação de credenciais.</li>
+                                <li>**Conteúdo das Conversas e Interações com a IA (que podem conter dados pessoais sensíveis, como informações de saúde, vida sexual, convicções, etc.):** Para a análise do progresso e estado do paciente pelo profissional da saúde.</li>
+                                <li>**Dados de Uso e Interação (logs, tempo de sessão, funcionalidades utilizadas):** Para monitoramento e controle para o profissional da saúde.</li>
+                            </ul>
+                            <p>O <strong>Ninho</strong> compromete-se a adotar medidas técnicas e administrativas em conformidade com a LGPD e normas ISO/IEC 27001, 27701 e 29100, incluindo criptografia dos arquivos, banco de dados seguro e acesso restrito.</p>
+                            <br>
+                            <h6><strong>5.</strong> Compartilhamento de Dados</h6>
+                            <p>Os dados armazenados não serão compartilhados com terceiros, exceto: quando autorizado expressamente pelo titular; mediante obrigação legal ou ordem judicial; ou para auxílio técnico restrito e necessário.</p>
+                            <br>
+                            <h6><strong>6.</strong> Direitos do Titular dos Dados e Responsabilidade na Exatidão</h6>
+                            <p>Em conformidade com a LGPD, o sistema deve permitir ao usuário exercer seus direitos, incluindo: Exclusão da conta e dos arquivos; Revogação do consentimento a qualquer momento; e Solicitação de informações sobre o uso de seus dados. Os direitos serão atendidos em até 48 horas para confirmação e até 15 dias para demandas complexas. O canal de contato é: **ninhomentalhealth@gmail.com**.</p>
+                            <p>O usuário é responsável pela exatidão, veracidade e atualização dos dados fornecidos e o <strong>Ninho</strong> não se responsabiliza por inconsistências inseridas pelo usuário.</p>
+                            <br>
+                            <h6><strong>7.</strong> Tratamento de Dados de Crianças e Adolescentes</h6>
+                            <p>O <strong>Ninho</strong> observa as disposições do art. 14 da LGPD. O tratamento de dados pessoais de crianças (menores de 12 anos) somente ocorrerá mediante consentimento específico e em destaque dado por pelo menos um dos pais ou responsável legal. O tratamento de dados de adolescentes (maiores de 12 anos e menores de 18 anos) será realizado de forma prioritária no seu melhor interesse.</p>
+                            <br>
+                            <h6><strong>8.</strong> Propriedade Intelectual</h6>
+                            <p>Todo o conteúdo, características e funcionalidades do <strong>Ninho</strong>, incluindo, mas não se limitando a, o software, design, texto, gráficos, logotipos, ícones e imagens, são de nossa propriedade ou de nossos licenciadores e são protegidos por leis de direitos autorais, marcas registradas e outras leis de propriedade intelectual.</p>
+                            <br>
+                            <h6><strong>9.</strong> Isenção de Garantias</h6>
+                            <p>O serviço é fornecido "no estado em que se encontra" e "conforme disponível", sem garantias de qualquer tipo, expressas ou implícitas. Não garantimos que o serviço será ininterrupto, livre de erros, seguro, ou que qualquer defeito será corrigido.</p>
+                            <br>
+                            <h6><strong>10.</strong> Limitação de Responsabilidade</h6>
+                            <p>Em nenhuma circunstância o <strong>Ninho</strong> ou seus diretores, funcionários, parceiros, agentes, fornecedores ou afiliados serão responsáveis por quaisquer danos indiretos, incidentais, especiais, consequenciais ou punitivos, incluindo, mas não se limitando a, perda de lucros, dados, uso, fundo de comércio ou outras perdas intangíveis, resultantes de (i) seu acesso ou uso, ou incapacidade de acessar ou usar o serviço; (ii) qualquer conduta ou conteúdo de terceiros no serviço; (iii) qualquer conteúdo obtido do serviço; e (iv) acesso não autorizado, uso ou alteração de suas transmissões ou conteúdo, seja com base em garantia, contrato, ato ilícito (incluindo negligência) ou qualquer outra teoria legal, mesmo que tenhamos sido informados da possibilidade de tais danos.</p>
+                            <br>
+                            <h6><strong>11.</strong> Disposições Gerais e Foro</h6>
+                            <p>O presente Termo pode ser atualizado periodicamente para refletir mudanças legais ou operacionais. Este Termo é regido pela legislação brasileira e pela LGPD. Fica eleito o foro da comarca de Belo Horizonte/MG para dirimir eventuais controvérsias.</p>
+                            <br>
+                            <h6><strong>12.</strong> Identificação do Responsável pelo Tratamento dos Dados</h6>
+                            <p>O Projeto Ninho é responsável pelo tratamento dos dados e indicará formalmente o Encarregado de Dados (DPO): <strong>Lucas Lima Wacha - Encarregado de Dados (DPO)</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group-custom">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="acceptTerms">
+                            <label class="form-check-label" for="acceptTerms">
+                                Li e concordo com os Termos de Uso.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="acceptPrivacy">
+                            <label class="form-check-label" for="acceptPrivacy">
+                                Li e concordo com a Política de Privacidade.
+                            </label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" id="accept-terms-btn" class="btn btn-primary">Aceitar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{% static 'js/configuracoes.js' %}"></script>
+    <script>
+        (function(){
+            const showTerms = {{ show_terms|yesno:'true,false' }};
+
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            document.addEventListener('DOMContentLoaded', function(){
+                if (showTerms) {
+                    // open bootstrap modal
+                    $('#termsModal').modal({backdrop: 'static', keyboard: false});
+                    $('#termsModal').modal('show');
+                }
+
+                // Accept button handler: POST to aceitar_termos endpoint
+                $('#accept-terms-btn').on('click', function(){
+                    const csrftoken = getCookie('csrftoken');
+                    // optional: validate checkboxes
+                    const termsChecked = document.getElementById('acceptTerms').checked;
+                    const privacyChecked = document.getElementById('acceptPrivacy').checked;
+                    if (!termsChecked || !privacyChecked) {
+                        alert('Por favor, marque as caixas de aceitação para continuar.');
+                        return;
+                    }
+
+                    fetch("{% url 'ninho:aceitar_termos' %}", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrftoken,
+                        },
+                        credentials: 'same-origin',
+                        body: JSON.stringify({ accept: true })
+                    }).then(r => r.json()).then(data => {
+                        if (data.ok) {
+                            $('#termsModal').modal('hide');
+                            // Redirect to a safe landing page after acceptance
+                            window.location.href = "{% url 'ninho:inicio' %}";
+                        } else {
+                            alert('Erro ao registrar aceitação dos termos. Tente novamente.');
+                        }
+                    }).catch(err => {
+                        console.error(err);
+                        alert('Erro de rede ao comunicar com o servidor.');
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
