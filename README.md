@@ -1,10 +1,7 @@
 <a href="https://www.figma.com/design/12h2biXwM44raaOLk5Fea5/Untitled?node-id=0-1&p=f&t=XHIvR8AcQq844Dj9-0"> ***Ninho*** </a>
 
-***INTEGRANTES:***
-- Camila de Moura Silva 12301540
-- Lucas Lima Wacha 12300560
-- Mathes Rosa 12301248
-- Thiago Tristão 12301973
+***SOBRE O PROJETO:***
+- O projeto NINHO foi trabalhado ao longo do ano como uma iniciativa minha de compreender como trabalhar com IA e implementa-la no codigo. A aplicação NINHO tem como objetivo ser uma ponte entre psicólogos e seus clientes, de forma que possa substituir o método tradicional de diário emocional.
 
 <h2>3A1</h2>
 
